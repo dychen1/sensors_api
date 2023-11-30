@@ -3,7 +3,7 @@
 
 ## Overview
 
-This API is written with FastAPI. It is meant to provide CRUD (no update endpoint implemented yet) operations services for sensors stored in a relational database with a default dialect of `mysql`. 
+This API is written with FastAPI using *> Python 3.11*. It is meant to provide CRUD (no update endpoint implemented yet) operations services for sensors stored in a relational database with a default dialect of `mysql`. 
 
 Upon startup, the application creates a pool of connection with the database using SQLAlchemy ORM engine. All operations against the database are wrapped in a transaction (code found in `src/utils/database_utils.py`)
 
@@ -101,4 +101,4 @@ A relationship status is defined for both models between one another in order to
 ## Running the Project
 
 1. Install dependencies: `pipenv install --dev`
-2. Run the FastAPI application: `uvicorn main:app --reload`
+2. From project root dir, to run the FastAPI application: `cd ./src && uvicorn app:app --reload`
