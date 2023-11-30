@@ -6,6 +6,7 @@ class SensorRequest(BaseModel):
     id: str
     name: str
     type: str
+    unit: str
     location: str
     active: bool
     activation_date: datetime
@@ -16,5 +17,4 @@ class SensorRequest(BaseModel):
 class SensorValueRequest(BaseModel):
     sensor_id: str
     value: float
-    unit: str
     creation_date: datetime
