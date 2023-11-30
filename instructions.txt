@@ -1,0 +1,22 @@
+* In Python implement a REST API that models sensors and their associated readings.
+* A sensor should have at least the following attributes:
+    * sensor id
+    * sensor name
+    * sensor type
+    * location
+    * activation date
+
+* Associated value readings should have at least the following attributes:
+    * sensor reading id
+    * sensor reading value
+    * date/time of measurement
+
+* The API should provide the endpoints to satisfy at least the following functional requirements:
+    * list sensors
+    * add sensor
+    * remove sensor
+    * get sensor by id
+    * get sensor by location
+    * insert sensor value(s)
+    * get sensor values by their name and date of creation. # NOTE: it should be by sensor id, name does not guarentee uniqueness
+    * get a values structure that provides daily aggregation values (e.g. min, q1, median, q3, max) for a given sensor id. # NOTE: also needs date otherwise we will pull more and more data as timeseries data grows.

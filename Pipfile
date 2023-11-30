@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "*"
+python-dotenv = "*"
+SQLAlchemy = "*"
+numpy = "*"
+uvicorn = "*"
+
+[dev-packages]
+black = "*"
+flake8 = "*"
+mypy = "*"

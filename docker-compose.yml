@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  mysql_db:
+    container_name: "${DATABASE_CONTAINER}"
+    image: mysql:8.0.17
+    environment:
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+      MYSQL_DATABASE: "${MYSQL_DATABASE}"
+      MYSQL_USER: "${MYSQL_USER}"
+      MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./mysql_db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro"
+
+  article_tagger_api:
+    container_name: "${API_CONTAINER}"
+    build:
+      context: "./src"
+    environment:
+      MYSQL_DATABASE: "${MYSQL_DATABASE}"
+      MYSQL_USER: "${MYSQL_USER}"
+      MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
+      DATABASE_CONTAINER: "${DATABASE_CONTAINER}"
+    ports:
+      - "5000:5000"
