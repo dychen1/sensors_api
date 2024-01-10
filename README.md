@@ -1,4 +1,4 @@
-# ShiftEnergy Assigment Documentation
+# Assigment Documentation
 
 
 ## Overview
